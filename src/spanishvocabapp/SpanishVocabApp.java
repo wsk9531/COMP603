@@ -5,6 +5,7 @@
  */
 package spanishvocabapp;
 
+
 /**
  *
  * @author Ben
@@ -19,7 +20,5 @@ public class SpanishVocabApp {
         db.checkAndCreateTable();
         db.populateTableFromText();
         System.out.println(db);
-        
     }
-    
 }
