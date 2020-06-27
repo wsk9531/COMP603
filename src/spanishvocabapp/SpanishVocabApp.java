@@ -15,8 +15,11 @@ public class SpanishVocabApp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
-        System.out.println("Hello!");
+        DBTools db = new DBTools();
+        db.checkAndCreateTable();
+        db.populateTableFromText();
+        System.out.println(db);
+        
     }
     
 }
