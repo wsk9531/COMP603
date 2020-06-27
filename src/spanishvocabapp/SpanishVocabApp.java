@@ -17,8 +17,12 @@ public class SpanishVocabApp {
      */
     public static void main(String[] args) {
         DBTools db = new DBTools();
-        db.checkAndCreateTable();
-        db.populateTableFromText();
+        
+        boolean tableNeedsFillingFlag = db.checkAndCreateTable();
+        if (tableNeedsFillingFlag) {
+            db.populateTableFromText();
+        }
+        
         System.out.println(db);
     }
 }

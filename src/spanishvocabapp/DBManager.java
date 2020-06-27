@@ -12,13 +12,14 @@ import java.util.logging.*;
  *
  * @author Ben
  */
-public class DBManager {
+public final class DBManager {
     private static final String URL = "jdbc:derby:WordDB;create=true";
     private static final String USR = "ben";
     private static final String PWD = "123";
     Connection conn;
     
     public DBManager() {
+        this.conn = null;
         connectToDatabase();
     }
     
