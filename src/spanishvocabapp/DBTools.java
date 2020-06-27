@@ -14,16 +14,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Methods to work with derby instance
  * @author Ben
  */
 public class DBTools {
     
-    public static final String TABLENAME = "WORDS";
+    public static final String TABLENAME = "WORD";
     private final DBManager dbManager;
     private DatabaseMetaData metaData;
     private Statement statement;
     ResultSet wordsTableCheck;
+    ResultSet rs;
     
     public DBTools () {
         dbManager = new DBManager();
@@ -33,7 +34,7 @@ public class DBTools {
         Boolean databaseNeedsFillingFlag = false;
         try {
         metaData = dbManager.conn.getMetaData();
-        wordsTableCheck = metaData.getTables(null, null, "WORDS", null); // checks for table named "WORDS"
+        wordsTableCheck = metaData.getTables(null, null, TABLENAME, null); // checks for table named "WORDS"
         if (!wordsTableCheck.next()) {
             statement = dbManager.conn.createStatement();
             
@@ -54,7 +55,7 @@ public class DBTools {
             
             statement.executeUpdate(sqlCreationStatement);
             statement.executeUpdate(sqlPK);
-            databaseNeedsFillingFlag = true;
+            return databaseNeedsFillingFlag = true;
         }
         } catch (SQLException ex) {
             Logger.getLogger(DBTools.class.getName()).log(Level.SEVERE, null, ex);
@@ -62,12 +63,16 @@ public class DBTools {
         return databaseNeedsFillingFlag;
     }
     
+    /**
+     * If there's zero table data from a past session, this can be used to pull 
+     * a 101 word dictionary from a text file, and populate the database.
+     */
     public void populateTableFromText() {
         try {
             BufferedReader br = new BufferedReader(new FileReader("dictionary.txt"));
             String input = null; // creates String to hold a line for parsing.
             br.readLine(); //essential: skips header row in csv.
-            if ((input = br.readLine()) != null) {
+            while ((input = br.readLine()) != null) {
                 String[] str = input.split(",");
                 int tempIndex = Integer.parseInt(str[0]);
                 int tempLeitner = Integer.parseInt(str[1]);
@@ -81,19 +86,40 @@ public class DBTools {
             }
         } catch (FileNotFoundException ex) {
                 Logger.getLogger(DBTools.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException | SQLException ex) {
+        } catch (IOException ex) {
                 Logger.getLogger(DBTools.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-    public void addToDB(int index, int leitner, int nextTest, String span, String grammar, String eng, String gender) throws SQLException {
+    public void addToDB(int index, int leitner, int nextTest, String span, String grammar, String eng, String gender)  {
+        try {
         statement = dbManager.conn.createStatement();
         String sqlAdd = "INSERT INTO " + TABLENAME + " (ID, LEITNERLEVEL, nextTestSession, espanol, grammar, english, gender) \n"
                 + "VALUES ("+ index + ", " + leitner + ", "+ nextTest + ", '"+ span + "', '"+ grammar + "', '"+ eng + "', '"+ gender + "')";
         statement.executeUpdate(sqlAdd);
+        } catch (SQLException ex) {
+           Logger.getLogger(DBTools.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
-        
+    public ResultSet retrieveWordTable(int level) {
+        String str = ("SELECT * FROM " + TABLENAME 
+                + " w WHERE w.LEITNERLEVEL = " + level);
+        try {
+            statement = this.dbManager.conn.createStatement();
+            this.rs = statement.executeQuery(str);
+        } catch (SQLException ex) {
+            Logger.getLogger(DBTools.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rs;
+    }
+
+    
+    
+    
+    
+    
+    
 // TODO: write add word function -- user feature
 // TODO: write remove word function -- user feature
 // TODO: write update word level function -- game logic

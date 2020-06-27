@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Sat Jun 27 20:45:33 NZST 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0172-f4f4-0845-00000ec7d048 
+on database directory C:\Users\Ben\Documents\NetBeansProjects\SpanishVocabApp\WordDB with class loader sun.misc.Launcher$AppClassLoader@5c647e05 
+Loaded from file:/C:/Users/Ben/Documents/NetBeansProjects/SpanishVocabApp/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_111-b14
+user.dir=C:\Users\Ben\Documents\NetBeansProjects\SpanishVocabApp
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

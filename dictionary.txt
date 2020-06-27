@@ -1,0 +1,102 @@
+﻿index,leitnerLevel,nextTestSession,espanol,grammar,english,gender
+1,1,0,abril,NOUN,April,masc
+2,1,0,brazo,NOUN,arm,masc
+3,1,0,agosto,NOUN,August,masc
+4,1,2,espalda,NOUN,back,fem
+5,1,0,malo,ADJECTIVE,bad,null
+6,1,0,hermoso,ADJECTIVE,beautiful,null
+7,1,0,ternera,NOUN,beef,fem
+8,1,1,cerveza,NOUN,beer,fem
+9,1,3,cuerpo,NOUN,body,masc
+10,1,1,calendario,NOUN,calendar,masc
+11,1,0,poder,VERB,can,null
+12,1,0,pecho,NOUN,chest,masc
+13,1,0,pollo,NOUN,chicken,masc
+14,1,0,reloj,NOUN,clock,masc
+15,1,0,café,NOUN,coffee,masc
+16,1,0,venir,VERB,come,null
+17,1,0,cocinero,NOUN,cook,masc
+18,1,0,diciembre,NOUN,December,masc
+19,1,0,¡Delicioso!,ADJECTIVE,Delicious!,null
+20,1,0,difícil,ADJECTIVE,difficult,null
+21,1,0,hacer,VERB,do,null
+22,1,0,médico,NOUN,doctor,masc
+23,1,0,fácil,ADJECTIVE,easy,null
+24,1,0,ocho,NUMBER,eight,null
+25,1,1,empleado,NOUN,employee,masc
+26,1,0,ingeniero,NOUN,engineer,masc
+27,1,0,lejos,ADVERB,far,null
+28,1,0,febrero,NOUN,February,masc
+29,1,4,dedo,NOUN,finger,masc
+30,1,0,pescado,NOUN,fish,masc
+31,1,4,cinco,NUMBER,five,null
+32,1,3,pie,NOUN,foot,masc
+33,1,0,cuatro,NUMBER,four,null
+34,1,4,viernes,NOUN,Friday,masc
+35,1,0,ir,VERB,go,null
+36,1,0,bueno,ADJECTIVE,good,null
+37,1,0,Buenas tardes.,PHRASE,Good afternoon. ,null
+38,1,0,Buenas tardes.,PHRASE,Good evening.,null
+39,1,0,Buenos días.,PHRASE,Good morning. ,null
+40,1,0,Buenas noches.,PHRASE,Good night.,null
+41,1,0,Adiós.,PHRASE,Goodbye.,null
+42,1,4,mano,NOUN,hand,fem
+43,1,0,cabeza,NOUN,head,fem
+44,1,0,Hola.,PHRASE,Hello.,null
+45,1,0,hora,NOUN,hour,fem
+46,1,3,¿Cómo estás?,PHRASE,How are you?,null
+47,1,1,Soy... (nombre),PHRASE,I'm,null
+48,1,3,enero,NOUN,January,masc
+49,1,0,julio,NOUN,July,masc
+50,1,0,junio,NOUN,June,masc
+51,1,0,cordero,NOUN,lamb,masc
+52,1,0,reírse,VERB,laugh,null
+53,1,0,pierna,NOUN,leg,fem
+54,1,2,hacer,VERB,make,null
+55,1,0,encargado,NOUN,manager,masc
+56,1,2,marzo,NOUN,March,masc
+57,1,0,mayo,NOUN,May,masc
+58,1,0,minuto,NOUN,minute,masc
+59,1,0,lunes,NOUN,Monday,masc
+60,1,2,cerca,ADJECTIVE,near,null
+61,1,0,Encantado de conocerte.,PHRASE,Nice to meet you.,null
+62,1,0,nueve,NUMBER,nine,null
+63,1,0,No.,PHRASE,No.,null
+64,1,0,noviembre,NOUN,November,masc
+65,1,0,enfermera,NOUN,nurse,fem
+66,1,0,en punto,ADVERB,o'clock,null
+67,1,0,octubre,NOUN,October,masc
+68,1,0,uno,NUMBER,one,null
+69,1,0,oficial de policía,NOUN,police officer,masc
+70,1,0,carne de cerdo,NOUN,pork,fem
+71,1,0,programador,NOUN,programmer,masc
+72,1,0,vendedor,NOUN,salesman,masc
+73,1,0,sábado,NOUN,Saturday,masc
+74,1,0,segundo,NOUN,second,masc
+75,1,0,ver,VERB,see,null
+76,1,0,septiembre,NOUN,September,masc
+77,1,0,siete,NUMBER,seven,null
+78,1,0,seis,NUMBER,six,null
+79,1,0,pequeño,ADJECTIVE,small,null
+80,1,0,estómago,NOUN,stomach,masc
+81,1,0,domingo,NOUN,Sunday,masc
+82,1,0,té,NOUN,tea,masc
+83,1,0,profesora,NOUN,teacher,fem
+84,1,0,diez,NUMBER,ten,null
+85,1,0,Gracias.,PHRASE,Thank you!,null
+86,1,0,tres,NUMBER,three,null
+87,1,0,jueves,NOUN,Thursday,masc
+88,1,0,hoy,ADVERB,today,null
+89,1,0,mañana,ADVERB,tomorrow,null
+90,1,0,martes,NOUN,Tuesday,masc
+91,1,0,dos,NUMBER,two,null
+92,1,0,feo,ADJECTIVE,ugly,null
+93,1,0,usar,VERB,use,null
+94,1,0,agua,NOUN,water,fem
+95,1,2,miércoles,NOUN,Wednesday,masc
+96,1,0,semana,NOUN,week,fem
+97,1,0,vino,NOUN,wine,masc
+98,1,0,año,NOUN,year,masc
+99,1,0,Si.,PHRASE,Yes.,null
+100,1,0,ayer,NOUN,yesterday,masc
+101,1,0,cero,NUMBER,zero,null

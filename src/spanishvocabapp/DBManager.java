@@ -9,7 +9,7 @@ import java.sql.*;
 import java.util.logging.*;
 
 /**
- *
+ * Provides methods used to initialise and connect to embedded Derby instance
  * @author Ben
  */
 public final class DBManager {
@@ -19,7 +19,7 @@ public final class DBManager {
     Connection conn;
     
     public DBManager() {
-        this.conn = null;
+        //this.conn = null;
         connectToDatabase();
     }
     

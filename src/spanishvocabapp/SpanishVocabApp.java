@@ -7,21 +7,19 @@ package spanishvocabapp;
 
 
 /**
- *
- * @author Ben
+ * On Github at https://github.com/wsk9531/COMP603
+ * @author Ben Henshall
+ * @id 14867281
  */
 public class SpanishVocabApp {
-
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
         DBTools db = new DBTools();
-        
         boolean tableNeedsFillingFlag = db.checkAndCreateTable();
         if (tableNeedsFillingFlag) {
             db.populateTableFromText();
         }
+        SpanishToEnglish Game = new SpanishToEnglish(db);
         
         System.out.println(db);
     }
