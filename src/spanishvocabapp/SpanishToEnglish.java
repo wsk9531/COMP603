@@ -5,6 +5,7 @@
  */
 package spanishvocabapp;
 
+import static java.lang.Integer.parseInt;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -20,29 +21,37 @@ public class SpanishToEnglish implements LeitnerSystem {
     public SpanishToEnglish(DBTools db) {
         
         wordList = Compose(db);
+        System.out.println(wordList);
     }
     
     private ArrayList<Word> Compose(DBTools db) {
         ResultSet WordTable;
         wordList = new ArrayList<>();
-        Word tempWord = new Word();
+        
         
         for (int i = 4; i > 0; i--) {
             try {
               WordTable = db.retrieveWordTable(i);
 
-                while (WordTable.next() && (wordList.size() <= 10)) {
-                    System.out.println(WordTable.getString(1));
-                    System.out.println(WordTable.getString(4));
-// add word to word array up to 10 from 5, then 4, then 3, then 2, then 1
-//randomly mix them (factorial function to reduce index placement in array) sort)
-//
-
+                while (WordTable.next() && (wordList.size() < 10)) {
+                    
+                    Word tempWord = new Word();
+                    int tempNumber;
+                    
+                    tempWord.setIndex(tempNumber = parseInt(WordTable.getString(1)));
+                    tempWord.setLeitnerLevel(tempNumber = parseInt(WordTable.getString(2)));
+                    tempWord.setNextTestSession(tempNumber = parseInt(WordTable.getString(3)));
+                    tempWord.setSpanishMeaning(WordTable.getString(4));
+                    tempWord.setGrammarType(WordTable.getString(5));
+                    tempWord.setEnglishMeaning(WordTable.getString(6));
+                    tempWord.setGender(WordTable.getString(7));
+                    
+                   wordList.add(tempWord);
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(DBTools.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }
+        } //TODO Assert WordList has 10 things in it
         return wordList;
     }
     
