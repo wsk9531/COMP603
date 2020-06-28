@@ -69,7 +69,7 @@ public abstract class WordPlan implements Comparable<Word> {
     /**
      * @param grammarType the grammarType to set
      */
-    public void setString(String grammarType) {
+    public void setGrammarType(String grammarType) {
         this.grammarType = grammarType;
     }
 
@@ -173,7 +173,7 @@ public abstract class WordPlan implements Comparable<Word> {
                 .append(",")
                 .append(this.englishMeaning)
                 .append(",")
-                .append(this.gender);
+                .append(this.getGender());
         
         return sb.toString();
     } 
