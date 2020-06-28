@@ -7,7 +7,8 @@ package spanishvocabapp;
 
 /**
  * Concrete of the WordPlan abstract class. 
- * Contains comparator methods necessary for game logic
+ * Contains calls to the full and empty super constructors.
+ * Contains comparator methods necessary for game logic.
  * @author Ben
  */
 public class Word extends WordPlan {

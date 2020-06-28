@@ -6,7 +6,7 @@
 package spanishvocabapp;
 
 /**
- *
+ * BUGGED AND BROKEN. Use Command-line console to run program.
  * @author wsk9531
  */
 public class SpanishVocabAppUI extends javax.swing.JFrame {

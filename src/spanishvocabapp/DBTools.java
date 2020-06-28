@@ -14,7 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Methods to work with derby instance
+ * Methods to work with derby instance.
  * @author Ben
  */
 public class DBTools {
@@ -30,6 +30,9 @@ public class DBTools {
         dbManager = new DBManager();
     }
 
+    /*
+    Checks if a table exists. If not, create the table.
+    */
     public boolean checkAndCreateTable() {
         Boolean databaseNeedsFillingFlag = false;
         try {
@@ -91,6 +94,9 @@ public class DBTools {
         }
     }
     
+    /*
+    Insert function to add row of data to WORD table.
+    */
     public void addToDB(int index, int leitner, int nextTest, String span, String grammar, String eng, String gender)  {
         try {
         statement = dbManager.conn.createStatement();
@@ -101,7 +107,10 @@ public class DBTools {
            Logger.getLogger(DBTools.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    /*
+    Retrieves WORD table consisting of a specific LeitnerLevel.
+    Returns a ResultSet with such data for spaced repetition process.
+    */
     public ResultSet retrieveWordTable(int level) {
         String str = ("SELECT * FROM " + TABLENAME 
                 + " w WHERE w.LEITNERLEVEL = " + level);
@@ -114,6 +123,10 @@ public class DBTools {
         return rs;
     }
 
+    /*
+    Database operation, takes a modified word object after successful test 
+    session and increases it's current level by 1 in the database.
+    */
     public void updateLeitnerLevel(Word w) {
 
         try {
@@ -127,6 +140,9 @@ public class DBTools {
         }
     }
     
+    /*
+    Database operation to take a word object and set its new level to the lowest.
+    */
     public void resetLeitnerLevel(Word w) {
         try {
             statement = this.dbManager.conn.createStatement();

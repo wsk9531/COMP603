@@ -8,16 +8,19 @@ package spanishvocabapp;
 import java.util.Scanner;
 
 /**
- * On Github at https://github.com/wsk9531/COMP603
+ * SPECIAL FEATURE: GIT. USED LOCALLY AND ALSO ON GITHUB AT
+ * https://github.com/wsk9531/COMP603/tree/master/src/spanishvocabapp
  *
  * @author Ben Henshall
  * @id 14867281
  */
 public class SpanishVocabApp extends SpanishVocabAppUI {
 
-    boolean continueFlag;
-
     public static void main(String[] args) {
+        /*
+        Initial setup of database. In event of an empty database, text file used
+        for initial propagation.
+        */
         DBTools db = new DBTools();
         System.out.println("Database connection working: " + db);
 
@@ -25,7 +28,7 @@ public class SpanishVocabApp extends SpanishVocabAppUI {
         if (tableNeedsFillingFlag) {
             db.populateTableFromText();
         }
-         
+
         /* GENERATED
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -56,18 +59,33 @@ public class SpanishVocabApp extends SpanishVocabAppUI {
                 new SpanishVocabAppUI().setVisible(true);
             }
         });
-        
+
+        /*
+        Generates list of words for this session.
+        */
         WordList gameList = new WordList(db);
+        //Lists answers in console log for testing / assessment.
         System.out.println(gameList.getWordList());
 
-        
+        //runs the game, involves use of DBTools and the above gameList
         runGame(gameList, db);
         //userAddWord();
+
+        /*
+        Closes connection to DB at end of program
+        */
+        db.dbManager.closeConnectionToDB();
     }
 
+    /*
+        Spaced repetition system game. Takes in a list of words,
+        reads user input and tests against the Word object made of Derby data.
+        Contains exit clause 
+    */
     public static void runGame(WordList gameList, DBTools db) {
         System.out.println("What do the following 10 Spanish words mean in English?");
-        System.out.println("Type your answer, then press enter to move on. Good Luck!");
+        System.out.println("Type your answer, then press enter to move on. \n" 
+                + "Type Exit or Quit to stop the session. Good Luck!");
         Scanner scan = new Scanner(System.in);
 
         //work through the 10 values present
@@ -81,11 +99,9 @@ public class SpanishVocabApp extends SpanishVocabAppUI {
             if ((scannerGameInput.trim().equalsIgnoreCase("exit")) || (scannerGameInput.trim().equalsIgnoreCase("quit"))) {
                 System.out.println("Exiting back to menu!");
                 return;
-            }
-            else if (scannerGameInput.trim().equalsIgnoreCase(tested.getEnglishMeaning())) {
+            } else if (scannerGameInput.trim().equalsIgnoreCase(tested.getEnglishMeaning())) {
                 System.out.println("Correct!");
                 gameList.IncrementLeitnerLevel(tested, db);
-
             } else {
                 System.out.println("Incorrect!");
                 gameList.ResetLeitnerLevel(tested, db);
@@ -93,5 +109,3 @@ public class SpanishVocabApp extends SpanishVocabAppUI {
         }
     }
 }
-
-

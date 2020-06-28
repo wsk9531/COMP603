@@ -7,10 +7,10 @@ package spanishvocabapp;
 
 /**
  * Interface for game logic. Games need to implement these functions for proper
- * spaced repetition
+ * spaced repetition system activity. 
  * @author Ben
  */
 public interface LeitnerSystem {
-    public void IncrementLeitnerLevel(Word w, DBTools db);
-    public void ResetLeitnerLevel(Word w, DBTools db);
+    public void IncrementLeitnerLevel(Word w, DBTools db); // level += 1
+    public void ResetLeitnerLevel(Word w, DBTools db); // level reset to 1.
 }
