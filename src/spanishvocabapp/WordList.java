@@ -22,7 +22,6 @@ public class WordList implements LeitnerSystem {
     private static final Integer MAXSIZE = 10; ;
 
     public WordList(DBTools db) {
-        
         this.wordList = Compose(db);
         this.orderMixer = MixOrder(MAXSIZE);
     }
@@ -69,6 +68,9 @@ public class WordList implements LeitnerSystem {
         return orderMixer;
     }
     
+    public ArrayList<Word> getWordList() {
+        return this.wordList;
+    }
     
     @Override
     public void IncrementLeitnerLevel(Word w) {

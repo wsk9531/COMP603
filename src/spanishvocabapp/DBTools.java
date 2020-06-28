@@ -114,7 +114,9 @@ public class DBTools {
         return rs;
     }
 
-    
+    public void updateWordDetails(Word w) {
+        
+    }
     
     
     
@@ -125,4 +127,4 @@ public class DBTools {
 // TODO: write update word level function -- game logic
 
     
-    }
+}

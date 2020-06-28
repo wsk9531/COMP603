@@ -14,12 +14,14 @@ public class SpanishVocabApp {
     
     public static void main(String[] args) {
         DBTools db = new DBTools();
+        
         boolean tableNeedsFillingFlag = db.checkAndCreateTable();
         if (tableNeedsFillingFlag) {
             db.populateTableFromText();
         }
-        WordList gameList = new WordList(db);
         
+        WordList gameList = new WordList(db);
+        System.out.println(gameList.getWordList());
         
         
         
