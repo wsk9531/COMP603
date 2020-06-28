@@ -29,7 +29,9 @@ public class SpanishVocabApp {
         WordList gameList = new WordList(db);
         System.out.println(gameList.getWordList());
 
+        
         runGame(gameList, db);
+        //userAddWord();
 
     }
 
@@ -46,7 +48,11 @@ public class SpanishVocabApp {
             System.out.println(tested.getSpanishMeaning() + "? Answer:");
             String scannerGameInput = scan.nextLine();
 
-            if (scannerGameInput.trim().equalsIgnoreCase(tested.getEnglishMeaning())) {
+            if ((scannerGameInput.trim().equalsIgnoreCase("exit")) || (scannerGameInput.trim().equalsIgnoreCase("quit"))) {
+                System.out.println("Exiting back to menu!");
+                return;
+            }
+            else if (scannerGameInput.trim().equalsIgnoreCase(tested.getEnglishMeaning())) {
                 System.out.println("Correct!");
                 gameList.IncrementLeitnerLevel(tested, db);
 
