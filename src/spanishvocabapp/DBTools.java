@@ -40,7 +40,7 @@ public class DBTools {
             
             String sqlCreationStatement = "CREATE TABLE " 
                     + TABLENAME 
-                    + " (ID int not null,"
+                    + " (ID int not null GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1,"
                     + "LEITNERLEVEL int not null, "
                     + "nextTestSession int not null, "
                     + "espanol varchar(50) not null,"

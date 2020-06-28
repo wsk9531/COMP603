@@ -72,6 +72,10 @@ public class WordList implements LeitnerSystem {
         return this.wordList;
     }
     
+    public ArrayList<Integer> getOrderMixer() {
+        return this.orderMixer;
+    }
+    
     @Override
     public void IncrementLeitnerLevel(Word w, DBTools db) {
         w.setLeitnerLevel(w.getLeitnerLevel()+1);
