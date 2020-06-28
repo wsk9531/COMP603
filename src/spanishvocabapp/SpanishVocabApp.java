@@ -5,7 +5,6 @@
  */
 package spanishvocabapp;
 
-
 /**
  * On Github at https://github.com/wsk9531/COMP603
  * @author Ben Henshall
@@ -19,8 +18,11 @@ public class SpanishVocabApp {
         if (tableNeedsFillingFlag) {
             db.populateTableFromText();
         }
-        SpanishToEnglish Game = new SpanishToEnglish(db);
+        WordList gameList = new WordList(db);
         
-        System.out.println(db);
+        
+        
+        
+        System.out.println("Database connection working: " + db);
     }
 }
