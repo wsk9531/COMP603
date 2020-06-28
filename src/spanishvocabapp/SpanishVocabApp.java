@@ -74,7 +74,7 @@ public class SpanishVocabApp extends SpanishVocabAppUI {
         /*
         Closes connection to DB at end of program
         */
-        db.dbManager.closeConnectionToDB();
+      //  db.dbManager.closeConnectionToDB();
     }
 
     /*
