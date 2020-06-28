@@ -109,14 +109,36 @@ public class DBTools {
             statement = this.dbManager.conn.createStatement();
             this.rs = statement.executeQuery(str);
         } catch (SQLException ex) {
-            Logger.getLogger(DBTools.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
         return rs;
     }
 
-    public void updateWordDetails(Word w) {
-        
+    public void updateLeitnerLevel(Word w) {
+
+        try {
+            statement = this.dbManager.conn.createStatement();
+            String str = ("UPDATE " + TABLENAME 
+                    + " SET LEITNERLEVEL = " + w.getLeitnerLevel() 
+                    + " WHERE ID = " + w.getIndex());
+            statement.executeUpdate(str);
+        } catch(SQLException ex) {
+            Logger.getLogger(DBTools.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
+    
+    public void resetLeitnerLevel(Word w) {
+        try {
+            statement = this.dbManager.conn.createStatement();
+            String str = ("UPDATE " + TABLENAME 
+                    + " SET LEITNERLEVEL = " + w.getLeitnerLevel() 
+                    + " WHERE ID = " + w.getIndex());
+            statement.executeUpdate(str);
+        } catch(SQLException ex) {
+            Logger.getLogger(DBTools.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     
     
     
@@ -124,7 +146,7 @@ public class DBTools {
     
 // TODO: write add word function -- user feature
 // TODO: write remove word function -- user feature
-// TODO: write update word level function -- game logic
+
 
     
 }

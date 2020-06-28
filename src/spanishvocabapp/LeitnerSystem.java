@@ -11,6 +11,6 @@ package spanishvocabapp;
  * @author Ben
  */
 public interface LeitnerSystem {
-    public void IncrementLeitnerLevel(Word w);
-    public void ResetLeitnerLevel(Word w);
+    public void IncrementLeitnerLevel(Word w, DBTools db);
+    public void ResetLeitnerLevel(Word w, DBTools db);
 }

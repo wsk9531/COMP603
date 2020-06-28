@@ -73,12 +73,14 @@ public class WordList implements LeitnerSystem {
     }
     
     @Override
-    public void IncrementLeitnerLevel(Word w) {
+    public void IncrementLeitnerLevel(Word w, DBTools db) {
         w.setLeitnerLevel(w.getLeitnerLevel()+1);
+        db.updateLeitnerLevel(w);
     }
 
     @Override
-    public void ResetLeitnerLevel(Word w) {
-        w.setLeitnerLevel(0);
+    public void ResetLeitnerLevel(Word w, DBTools db) {
+        w.setLeitnerLevel(1);
+        db.resetLeitnerLevel(w);
     }    
 }

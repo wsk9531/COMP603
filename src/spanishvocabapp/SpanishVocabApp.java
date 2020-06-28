@@ -23,6 +23,9 @@ public class SpanishVocabApp {
         WordList gameList = new WordList(db);
         System.out.println(gameList.getWordList());
         
+       //gameList.IncrementLeitnerLevel(gameList.getWordList().get(0), db);
+      // gameList.IncrementLeitnerLevel(gameList.getWordList().get(0), db);
+       //gameList.ResetLeitnerLevel(gameList.getWordList().get(0), db);
         
         
         System.out.println("Database connection working: " + db);
